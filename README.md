@@ -1,3 +1,3 @@
-## voting-session
+## Receita Service
 
 README still in progress...
