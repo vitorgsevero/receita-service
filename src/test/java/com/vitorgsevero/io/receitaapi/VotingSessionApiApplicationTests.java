@@ -1,4 +1,4 @@
-package com.vitorgsevero.io.votingsessionapi;
+package com.vitorgsevero.io.receitaapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

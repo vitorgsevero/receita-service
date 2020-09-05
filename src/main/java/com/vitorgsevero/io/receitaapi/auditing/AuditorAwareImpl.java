@@ -1,4 +1,4 @@
-package com.vitorgsevero.io.votingsessionapi.auditing;
+package com.vitorgsevero.io.receitaapi.auditing;
 
 import org.springframework.data.domain.AuditorAware;
 

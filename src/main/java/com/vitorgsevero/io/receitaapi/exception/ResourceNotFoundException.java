@@ -1,4 +1,4 @@
-package com.vitorgsevero.io.votingsessionapi.exception;
+package com.vitorgsevero.io.receitaapi.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
