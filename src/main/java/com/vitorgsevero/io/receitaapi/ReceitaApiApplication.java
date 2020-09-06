@@ -52,10 +52,6 @@ public class ReceitaApiApplication {
 		LeitorCSV leitorCSV = new LeitorCSV();
 		leitorCSV.readCSV();
 
-		// Exemplo como chamar o "serviço" do Banco Central.
-		// ReceitaService receitaService = new ReceitaService();
-		// receitaService.atualizarConta("0101", "123456", 100.50, "A");
-
 		ReceitaService receitaService = new ReceitaService();
 		receitaService.atualizarConta("0101", "123456", 100.50, "A");
 
