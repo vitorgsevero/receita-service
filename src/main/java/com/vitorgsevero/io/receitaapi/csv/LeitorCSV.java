@@ -8,25 +8,28 @@ import java.io.*;
  */
 public class LeitorCSV {
 
-    public static File arquivo = new File("receita.csv");
-    private static BufferedReader reader;
+    public File file = new File("\\receita.csv");
+    private BufferedReader reader = null;
+    private String line = "";
+    private String csvSeparator = ";";
 
     public void readCSV() throws IOException {
 
-        InputStream importa = new FileInputStream(arquivo);
-        InputStreamReader input = new InputStreamReader(importa);
-        reader = new BufferedReader(input);
-        String linhacsv = reader.readLine();
-
         try {
-            while (linhacsv != null) {
 
-                System.out.println(linhacsv);
-                linhacsv = reader.readLine();
+            reader = new BufferedReader(new FileReader(file));
+
+            while ((line = reader.readLine()) != null){
+
+                String[] receita = line.split(csvSeparator);
+
+                System.out.println("entrou aqui");
+
+                System.out.println(receita);
+
             }
-        } catch (FileNotFoundException arquivoNaoEncontrado) {
-            throw new FileNotFoundException("arquivoNaoEncontrado");
+        } catch (FileNotFoundException e){
+            e.getLocalizedMessage();
         }
-
     }
 }
