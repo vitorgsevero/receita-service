@@ -13,7 +13,7 @@ public class LeitorCSV {
     private String line = "";
     private String csvSeparator = ";";
 
-    public void readCSV() throws IOException {
+    public String readCSV() throws IOException {
 
         try {
 
@@ -22,14 +22,17 @@ public class LeitorCSV {
             while ((line = reader.readLine()) != null){
 
                 String[] receita = line.split(csvSeparator);
-
-                System.out.println("entrou aqui");
-
                 System.out.println(receita);
 
             }
         } catch (FileNotFoundException e){
             e.getLocalizedMessage();
         }
+
+        return null;
     }
+
+    //TODO - Criação de método para exportar o arquivo após lido e alterado
+
+
 }

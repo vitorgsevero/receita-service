@@ -28,6 +28,7 @@ package com.vitorgsevero.io.receitaapi;
 
 import com.vitorgsevero.io.receitaapi.auditing.AuditorAwareImpl;
 import com.vitorgsevero.io.receitaapi.csv.LeitorCSV;
+import com.vitorgsevero.io.receitaapi.model.Receita;
 import com.vitorgsevero.io.receitaapi.services.ReceitaService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -49,14 +50,16 @@ public class ReceitaApiApplication {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		SpringApplication.run(ReceitaApiApplication.class, args);
 
+		Receita receita = new Receita();
 		LeitorCSV leitorCSV = new LeitorCSV();
+
 		leitorCSV.readCSV();
 
+		//TODO - Chamar o endpoint criado após o ajuste para utilização do ReceitaService
 		ReceitaService receitaService = new ReceitaService();
-		receitaService.atualizarConta("0101", "123456", 100.50, "A");
+		receitaService.atualizarConta(receita.getAgencia(), receita.getConta(), receita.getSaldo(), receita.getStatus());
 
 		leitorCSV.readCSV();
-
 
 	}
 
